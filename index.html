@@ -6,9 +6,15 @@
 
     <title>Engr. Ron Mar B. Pangilinan | Professional Portfolio</title>
 
-    <meta name="description" content="Professional portfolio of Engr. Ron Mar B. Pangilinan - QA/QC Civil Engineer, Planning Engineer, Construction Estimator and Quantity Takeoff Specialist.">
+    <meta name="description"
+          content="Professional portfolio of Engr. Ron Mar B. Pangilinan — QA/QC Civil Engineer, Planning Engineer, Construction Estimator and Quantity Takeoff Specialist.">
 
     <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -17,80 +23,150 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 75px;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
-            color: #17202a;
+            background: #f3f6f9;
+            color: #18232d;
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
-        nav {
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navbar {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: #101820;
-            padding: 15px 5%;
+            z-index: 9999;
+
+            background: rgba(10, 20, 30, 0.97);
+
+            border-bottom: 3px solid #f5a400;
+
+            box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1250px;
+            margin: auto;
+
+            padding: 14px 25px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
         }
 
-        .logo {
+        .nav-logo {
             color: white;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
-        .logo span {
+        .nav-logo span {
             color: #f5a400;
         }
 
-        nav ul {
-            list-style: none;
+        .nav-links {
             display: flex;
             gap: 25px;
+            list-style: none;
         }
 
-        nav ul li a {
+        .nav-links a {
             color: white;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.25s;
         }
 
-        nav ul li a:hover {
+        .nav-links a:hover {
             color: #f5a400;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
-            min-height: 90vh;
-            background: linear-gradient(135deg, #101820 0%, #172b3a 65%, #f5a400 65%, #f5a400 100%);
-            color: white;
+            min-height: 88vh;
+
             display: flex;
             align-items: center;
-            padding: 70px 8%;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b141d 0%,
+                    #172b3a 62%,
+                    #f5a400 62%,
+                    #f5a400 100%
+                );
+
+            color: white;
         }
 
-        .hero-content {
-            max-width: 900px;
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            right: -120px;
+            top: -120px;
+
+            width: 450px;
+            height: 450px;
+
+            border: 60px solid rgba(255,255,255,0.05);
+
+            transform: rotate(45deg);
         }
 
-        .hero-tag {
+        .hero-container {
+            width: 100%;
+            max-width: 1250px;
+
+            margin: auto;
+            padding: 70px 25px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
             color: #f5a400;
-            font-weight: bold;
-            letter-spacing: 2px;
+
+            font-size: 15px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
             margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: clamp(38px, 6vw, 70px);
-            line-height: 1.05;
+            font-size: clamp(40px, 6vw, 78px);
+
+            line-height: 1.03;
+
             margin-bottom: 20px;
+
+            max-width: 950px;
         }
 
         .hero h1 span {
@@ -98,182 +174,336 @@
         }
 
         .hero-subtitle {
-            font-size: 20px;
-            max-width: 800px;
-            color: #e8edf1;
+            font-size: clamp(17px, 2vw, 23px);
+
+            color: #e8eef2;
+
+            max-width: 900px;
+
             margin-bottom: 35px;
         }
 
-        .buttons {
+        .hero-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 13px;
         }
 
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
         .btn {
-            display: inline-block;
-            padding: 13px 23px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 13px 22px;
+
+            border-radius: 7px;
+
+            font-weight: 800;
+            font-size: 14px;
+
+            transition: all 0.3s ease;
+
+            cursor: pointer;
         }
 
         .btn-primary {
             background: #f5a400;
             color: #101820;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.18);
         }
 
         .btn-primary:hover {
-            background: #ffbd32;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            background: #ffbb2e;
+            box-shadow: 0 9px 20px rgba(0,0,0,0.22);
         }
 
         .btn-outline {
             border: 2px solid white;
             color: white;
+            background: transparent;
         }
 
         .btn-outline:hover {
             background: white;
             color: #101820;
+
+            transform: translateY(-3px);
         }
 
-        /* SECTIONS */
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
         section {
-            padding: 80px 8%;
+            padding: 85px 25px;
         }
 
-        .section-title {
+        .section-container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-heading {
             text-align: center;
             margin-bottom: 45px;
         }
 
-        .section-title h2 {
-            font-size: 35px;
-            color: #101820;
+        .section-heading h2 {
+            font-size: clamp(30px, 4vw, 42px);
+
+            color: #132330;
+
             margin-bottom: 10px;
         }
 
-        .section-title .line {
-            width: 70px;
-            height: 4px;
-            background: #f5a400;
-            margin: auto;
+        .section-heading p {
+            color: #68747e;
         }
 
-        /* PROFILE */
-        .profile {
+        .orange-line {
+            width: 75px;
+            height: 4px;
+
+            background: #f5a400;
+
+            margin: 14px auto 0;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        #profile {
             background: white;
         }
 
-        .profile-text {
+        .profile-box {
             max-width: 950px;
             margin: auto;
+
             text-align: center;
+
             font-size: 18px;
-            color: #4a5560;
+
+            color: #4d5a64;
         }
 
-        /* SKILLS */
-        .skills {
-            background: #eef2f5;
+        .profile-box strong {
+            color: #172b3a;
         }
 
-        .skill-grid {
-            max-width: 1100px;
-            margin: auto;
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        #skills {
+            background: #edf2f5;
+        }
+
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
             gap: 20px;
         }
 
         .skill-card {
             background: white;
-            padding: 25px;
+
+            padding: 28px;
+
             border-radius: 10px;
-            border-top: 4px solid #f5a400;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+
+            border-top: 5px solid #f5a400;
+
+            box-shadow: 0 7px 22px rgba(20,40,60,0.08);
+
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: 0 13px 28px rgba(20,40,60,0.14);
+        }
+
+        .skill-icon {
+            font-size: 30px;
+            margin-bottom: 12px;
         }
 
         .skill-card h3 {
             color: #172b3a;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .skill-card p {
-            color: #606b75;
-            font-size: 15px;
+            color: #64717a;
+            font-size: 14px;
         }
 
-        /* PORTFOLIO */
-        .portfolio {
-            background: white;
+
+        /* =========================
+           PORTFOLIO GALLERY
+        ========================= */
+
+        #portfolio {
+            background: #f3f6f9;
         }
 
         .portfolio-intro {
-            text-align: center;
             max-width: 850px;
-            margin: -20px auto 35px;
-            color: #5e6872;
+
+            margin: -15px auto 40px;
+
+            text-align: center;
+
+            color: #66737d;
         }
 
-        .pdf-container {
-            max-width: 1100px;
+        .gallery {
+            max-width: 1050px;
             margin: auto;
-            background: #222;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
 
-        .pdf-container iframe {
-            width: 100%;
-            height: 850px;
-            border: none;
-            border-radius: 6px;
+        .portfolio-page {
             background: white;
+
+            margin-bottom: 35px;
+
+            padding: 10px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 10px 30px rgba(15,35,50,0.12);
+
+            overflow: hidden;
+
+            opacity: 0;
+            transform: translateY(30px);
+
+            animation: pageReveal 0.8s ease forwards;
         }
 
-        /* CONTACT */
-        .contact {
+        .portfolio-page img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            border-radius: 6px;
+        }
+
+        .page-number {
+            text-align: center;
+
+            padding: 12px 5px 5px;
+
+            color: #71808b;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+        @keyframes pageReveal {
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .download-area {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
             background: #101820;
             color: white;
         }
 
-        .contact .section-title h2 {
+        #contact .section-heading h2 {
             color: white;
         }
 
+        #contact .section-heading p {
+            color: #aeb9c0;
+        }
+
         .contact-grid {
-            max-width: 1000px;
-            margin: auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
             gap: 20px;
         }
 
         .contact-card {
             background: #172b3a;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
+
             border: 1px solid #314555;
+
+            border-radius: 10px;
+
+            padding: 28px 20px;
+
+            text-align: center;
+
+            transition: 0.3s;
         }
 
-        .contact-card .icon {
-            font-size: 30px;
+        .contact-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #f5a400;
+        }
+
+        .contact-icon {
+            font-size: 32px;
             margin-bottom: 10px;
         }
 
         .contact-card h3 {
-            margin-bottom: 8px;
             color: #f5a400;
+
+            margin-bottom: 10px;
         }
 
-        .contact-card a {
+        .contact-card a,
+        .contact-card p {
             color: white;
-            text-decoration: none;
+
+            font-size: 14px;
+
             word-break: break-word;
         }
 
@@ -281,345 +511,722 @@
             color: #f5a400;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             background: #080d11;
-            color: #9da7ae;
+
+            color: #8e9aa2;
+
             text-align: center;
-            padding: 25px 15px;
+
+            padding: 30px 20px;
+
             font-size: 13px;
+        }
+
+        .footer-name {
+            color: white;
+            font-weight: 800;
         }
 
         .disclaimer {
             max-width: 900px;
-            margin: 10px auto 0;
-            color: #737d84;
+
+            margin: 12px auto 0;
+
+            color: #69757d;
+
+            font-size: 12px;
         }
 
-        /* MOBILE */
-        @media (max-width: 700px) {
 
-            nav {
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .nav-container {
                 flex-direction: column;
                 gap: 10px;
             }
 
-            nav ul {
+            .nav-links {
                 gap: 12px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
-            nav ul li a {
-                font-size: 12px;
+            .nav-links a {
+                font-size: 11px;
             }
 
             .hero {
-                min-height: 80vh;
-                padding: 60px 6%;
-                background: linear-gradient(145deg, #101820 0%, #172b3a 75%, #f5a400 75%);
+                min-height: 82vh;
+
+                background:
+                    linear-gradient(
+                        145deg,
+                        #0b141d 0%,
+                        #172b3a 78%,
+                        #f5a400 78%,
+                        #f5a400 100%
+                    );
+            }
+
+            .hero-container {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
             }
 
             .hero-subtitle {
-                font-size: 17px;
+                font-size: 16px;
             }
 
             section {
-                padding: 60px 6%;
+                padding: 60px 15px;
             }
 
-            .pdf-container iframe {
-                height: 600px;
+            .portfolio-page {
+                padding: 5px;
+                margin-bottom: 22px;
+                border-radius: 8px;
             }
+
+            .portfolio-page img {
+                border-radius: 4px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-buttons {
+                width: 100%;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <div class="nav-logo">
             ENGR. <span>RON MAR</span>
         </div>
 
-        <ul>
-            <li><a href="#profile">PROFILE</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#portfolio">PORTFOLIO</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+        <ul class="nav-links">
+
+            <li>
+                <a href="#profile">PROFILE</a>
+            </li>
+
+            <li>
+                <a href="#skills">SKILLS</a>
+            </li>
+
+            <li>
+                <a href="#portfolio">PORTFOLIO</a>
+            </li>
+
+            <li>
+                <a href="#contact">CONTACT</a>
+            </li>
+
         </ul>
-    </nav>
+
+    </div>
+
+</nav>
 
 
-    <!-- HERO -->
-    <header class="hero">
+<!-- =========================
+     HERO
+========================= -->
 
-        <div class="hero-content">
+<header class="hero">
 
-            <div class="hero-tag">
-                PROFESSIONAL PORTFOLIO
-            </div>
+    <div class="hero-container">
 
-            <h1>
-                ENGR. RON MAR B.<br>
-                <span>PANGILINAN</span>
-            </h1>
+        <div class="hero-label">
+            PROFESSIONAL PORTFOLIO
+        </div>
 
-            <p class="hero-subtitle">
-                QA/QC Civil Engineer | Planning Engineer |
-                Construction Estimator | Quantity Takeoff Specialist
-            </p>
+        <h1>
+            ENGR. RON MAR B.
+            <span>PANGILINAN</span>
+        </h1>
 
-            <div class="buttons">
+        <p class="hero-subtitle">
 
-                <a href="#portfolio" class="btn btn-primary">
-                    VIEW PORTFOLIO
-                </a>
+            QA/QC Civil Engineer |
+            Planning Engineer |
+            Construction Estimator |
+            Quantity Takeoff Specialist
 
-                <a href="Professional-Portfolio.pdf"
-                   class="btn btn-outline"
-                   target="_blank">
-                    DOWNLOAD PDF
-                </a>
+        </p>
 
-                <a href="https://www.linkedin.com/in/engr-ron-mar-pangilinan/"
-                   class="btn btn-outline"
-                   target="_blank">
-                    LINKEDIN
-                </a>
 
-            </div>
+        <div class="hero-buttons">
+
+            <a href="#portfolio"
+               class="btn btn-primary">
+
+                📁 VIEW PORTFOLIO
+
+            </a>
+
+
+            <a href="Professional-Portfolio.pdf"
+               target="_blank"
+               class="btn btn-outline">
+
+                📄 DOWNLOAD PDF
+
+            </a>
+
+
+            <a href="https://www.linkedin.com/in/engr-ron-mar-pangilinan/"
+               target="_blank"
+               rel="noopener"
+               class="btn btn-outline">
+
+                🔗 LINKEDIN
+
+            </a>
+
+
+            <a href="mailto:Pangilinan.ronmarb@gmail.com"
+               class="btn btn-outline">
+
+                ✉ EMAIL ME
+
+            </a>
 
         </div>
 
-    </header>
+    </div>
+
+</header>
 
 
-    <!-- PROFILE -->
-    <section id="profile" class="profile">
+<!-- =========================
+     PROFILE
+========================= -->
 
-        <div class="section-title">
+<section id="profile">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
             <h2>Professional Profile</h2>
-            <div class="line"></div>
+
+            <div class="orange-line"></div>
+
         </div>
 
-        <div class="profile-text">
+
+        <div class="profile-box">
 
             <p>
-                Registered Civil Engineer with hands-on experience in
-                quantity takeoff, cost estimating, structural and civil
-                engineering, construction planning, QA/QC, technical
-                documentation, and site coordination.
+
+                <strong>Registered Civil Engineer</strong> with hands-on
+                experience in quantity takeoff, cost estimating,
+                structural and civil engineering, construction planning,
+                QA/QC, technical documentation, and site coordination.
+
             </p>
 
             <br>
 
             <p>
-                Experienced in construction quality control, material
-                verification, inspection, testing, technical documentation,
-                quantity takeoff, and construction-related workflows.
+
+                Experienced in construction quality control,
+                material verification, inspection and testing,
+                quantity takeoff, technical documentation,
+                and construction-related workflows.
+
             </p>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- SKILLS -->
-    <section id="skills" class="skills">
+<!-- =========================
+     SKILLS
+========================= -->
 
-        <div class="section-title">
+<section id="skills">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
             <h2>Software & Technical Skills</h2>
-            <div class="line"></div>
+
+            <div class="orange-line"></div>
+
         </div>
 
-        <div class="skill-grid">
+
+        <div class="skills-grid">
+
 
             <div class="skill-card">
+
+                <div class="skill-icon">📐</div>
+
                 <h3>PlanSwift</h3>
+
                 <p>
                     Quantity Takeoff, Cost Estimating,
-                    BOQ/BOM and Construction Estimating
+                    BOQ/BOM and Construction Estimating.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
+
+                <div class="skill-icon">📋</div>
+
                 <h3>Bluebeam Revu</h3>
+
                 <p>
-                    Digital Quantity Takeoff, Measurement,
-                    Markups and Construction Documentation
+                    Digital Quantity Takeoff,
+                    Measurements, Markups and
+                    Construction Documentation.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
+
+                <div class="skill-icon">🏗️</div>
+
                 <h3>AutoCAD</h3>
+
                 <p>
-                    Engineering Drawings, Plan Interpretation
-                    and Technical Documentation
+                    Engineering Drawings,
+                    Plan Interpretation and
+                    Technical Documentation.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
+
+                <div class="skill-icon">📊</div>
+
                 <h3>STAAD.Pro</h3>
+
                 <p>
-                    Structural Analysis and Design
+                    Structural Analysis and Design.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
+
+                <div class="skill-icon">📅</div>
+
                 <h3>Primavera P6</h3>
+
                 <p>
-                    Construction Planning and Scheduling
+                    Construction Planning
+                    and Scheduling.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
+
+                <div class="skill-icon">💻</div>
+
                 <h3>Microsoft Office</h3>
+
                 <p>
                     Excel, Word, PowerPoint and
-                    Technical Documentation
+                    Technical Documentation.
                 </p>
+
             </div>
 
+
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="portfolio">
+<!-- =========================
+     PORTFOLIO GALLERY
+========================= -->
 
-        <div class="section-title">
+<section id="portfolio">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
             <h2>Professional Portfolio</h2>
-            <div class="line"></div>
+
+            <div class="orange-line"></div>
+
         </div>
+
 
         <p class="portfolio-intro">
-            Explore my professional experience, estimating projects,
-            construction and QA/QC experience, technical workflows,
+
+            Explore my professional profile, technical skills,
+            estimating projects, construction and QA/QC experience,
             certifications and training.
+
         </p>
 
-        <div class="pdf-container">
 
-            <iframe
-                src="Professional-Portfolio.pdf"
-                title="Engr. Ron Mar B. Pangilinan Professional Portfolio">
-            </iframe>
+        <div class="gallery">
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-01.jpg"
+                     alt="Professional Portfolio Page 1"
+                     loading="eager">
+
+                <div class="page-number">
+                    PAGE 01
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-02.jpg"
+                     alt="Professional Portfolio Page 2"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 02
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-03.jpg"
+                     alt="Professional Portfolio Page 3"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 03
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-04.jpg"
+                     alt="Professional Portfolio Page 4"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 04
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-05.jpg"
+                     alt="Professional Portfolio Page 5"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 05
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-06.jpg"
+                     alt="Professional Portfolio Page 6"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 06
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-07.jpg"
+                     alt="Professional Portfolio Page 7"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 07
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-08.jpg"
+                     alt="Professional Portfolio Page 8"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 08
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-09.jpg"
+                     alt="Professional Portfolio Page 9"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 09
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-10.jpg"
+                     alt="Professional Portfolio Page 10"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 10
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-page">
+
+                <img src="portfolio-page-11.jpg"
+                     alt="Professional Portfolio Page 11"
+                     loading="lazy">
+
+                <div class="page-number">
+                    PAGE 11
+                </div>
+
+            </div>
+
 
         </div>
 
-        <div style="text-align:center; margin-top:25px;">
+
+        <div class="download-area">
 
             <a href="Professional-Portfolio.pdf"
-               class="btn btn-primary"
-               target="_blank">
-                OPEN FULL PORTFOLIO
+               target="_blank"
+               class="btn btn-primary">
+
+                📄 DOWNLOAD FULL PORTFOLIO PDF
+
             </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
+<!-- =========================
+     CONTACT
+========================= -->
 
-        <div class="section-title">
+<section id="contact">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
             <h2>Let's Connect</h2>
-            <div class="line"></div>
+
+            <p>
+                Available for professional opportunities,
+                remote work, WFH and construction-related roles.
+            </p>
+
+            <div class="orange-line"></div>
+
         </div>
+
 
         <div class="contact-grid">
 
+
             <!-- EMAIL -->
+
             <div class="contact-card">
 
-                <div class="icon">✉</div>
+                <div class="contact-icon">
+                    ✉️
+                </div>
 
                 <h3>Email</h3>
 
                 <a href="mailto:Pangilinan.ronmarb@gmail.com">
+
                     Pangilinan.ronmarb@gmail.com
+
                 </a>
 
             </div>
 
 
             <!-- LINKEDIN -->
+
             <div class="contact-card">
 
-                <div class="icon">in</div>
+                <div class="contact-icon">
+                    🔗
+                </div>
 
                 <h3>LinkedIn</h3>
 
                 <a href="https://www.linkedin.com/in/engr-ron-mar-pangilinan/"
-                   target="_blank">
+                   target="_blank"
+                   rel="noopener">
+
                     View LinkedIn Profile
+
                 </a>
 
             </div>
 
 
             <!-- PHONE -->
+
             <div class="contact-card">
 
-                <div class="icon">☎</div>
+                <div class="contact-icon">
+                    📞
+                </div>
 
                 <h3>Contact Number</h3>
 
                 <a href="tel:+639602446185">
+
                     +63 960 244 6185
+
                 </a>
 
                 <br>
 
                 <a href="tel:+639670840495">
+
                     +63 967 084 0495
+
                 </a>
 
             </div>
 
 
             <!-- LOCATION -->
+
             <div class="contact-card">
 
-                <div class="icon">📍</div>
+                <div class="contact-icon">
+                    📍
+                </div>
 
                 <h3>Location</h3>
 
                 <p>
+
                     San Leonardo, Nueva Ecija<br>
                     Philippines 3102
+
                 </p>
 
             </div>
 
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <strong>ENGR. RON MAR B. PANGILINAN</strong>
-
-        <div class="disclaimer">
-
-            Portfolio Disclaimer: Project information, diagrams, and
-            documentation are presented for professional portfolio purposes.
-            Confidential company records and proprietary project documents
-            are not reproduced.
 
         </div>
 
-        <br>
+    </div>
 
-        © 2026 Engr. Ron Mar B. Pangilinan. All Rights Reserved.
+</section>
 
-    </footer>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-name">
+
+        ENGR. RON MAR B. PANGILINAN
+
+    </div>
+
+
+    <div class="disclaimer">
+
+        Portfolio Disclaimer: Project information, diagrams,
+        and documentation are presented for professional portfolio
+        purposes. Confidential company records and proprietary
+        project documents are not reproduced.
+
+    </div>
+
+
+    <br>
+
+    © 2026 Engr. Ron Mar B. Pangilinan.
+    All Rights Reserved.
+
+</footer>
+
 
 </body>
 </html>
